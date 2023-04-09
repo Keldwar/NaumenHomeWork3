@@ -7,9 +7,9 @@ import java.security.SecureRandom;
 import java.util.*;
 
 public class User {
-    private String username;
-    private String email;
-    private byte[] passwordHash;
+    private final String username;
+    private final String email;
+    private final byte[] passwordHash;
 
     public User(String username, String email, String password) {
         this.username = username;
@@ -32,9 +32,11 @@ public class User {
     }
 
     public static List<User> findDuplicates(Collection<User> A, Collection<User> B) {
+        HashSet<User> collA = new HashSet<>(A);
+        HashSet<User> collB = new HashSet<>(B);
         List<User> duplicates = new ArrayList<>();
-        for (User user : A) {
-            if (B.contains(user)) {
+        for (User user : collA) {
+            if (collB.contains(user)) {
                 duplicates.add(user);
             }
         }
