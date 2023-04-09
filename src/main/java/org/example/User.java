@@ -74,8 +74,8 @@ public class User {
         User user3 = new User("Liza", "Liza@mail.ru", "17april");
         User user4 = new User("Nastya", "Nastya@yandex.ru", "Stephan15");
 
-        HashSet<User> collA = new HashSet<>();
-        HashSet<User> collB = new HashSet<>();
+        Set<User> collA = new HashSet<>();
+        Set<User> collB = new HashSet<>();
 
         collA.add(user1);
         collA.add(user2);
