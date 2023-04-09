@@ -2,7 +2,7 @@ package org.example;
 
 import java.io.*;
 import java.util.Comparator;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -48,7 +48,7 @@ public class WordsCounter {
         final int DOUBLE_QUOTE_CHARACTER = '"';
         StreamTokenizer streamTokenizer = initStreamTokenizer(reader);
 
-        Map<String, Integer> countWords = new HashMap<>();
+        Map<String, Integer> countWords = new LinkedHashMap<>();
         int currentToken = streamTokenizer.nextToken();
         while (currentToken != StreamTokenizer.TT_EOF) {
             if (streamTokenizer.ttype == StreamTokenizer.TT_WORD
